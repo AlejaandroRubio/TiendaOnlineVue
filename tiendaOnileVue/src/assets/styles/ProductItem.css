@@ -1,0 +1,95 @@
+.card {
+  position: relative;
+  width: 90%;
+  height: 300px;
+  border-radius: 16px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 16px;
+  color: white;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.text-container {
+  position: relative;
+  z-index: 2;
+}
+
+.text-container h3 {
+  font-size: 24px;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+.text-container p {
+  font-size: 16px;
+  margin: 4px 0;
+  font-weight: 400;
+}
+
+.available {
+  color: #4CAF50;
+  font-weight: 500;
+}
+
+.not-available {
+  color: #F44336;
+  font-weight: 500;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.button {
+  border: none;
+  padding: 10px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 20px;
+  transition: background 0.3s, transform 0.2s;
+  font-weight: 500;
+}
+
+.button.increase {
+  background: #4CAF50;
+  color: white;
+}
+
+.button.decrease {
+  background: #F44336;
+  color: white;
+}
+
+.button:disabled {
+  background: #888;
+  cursor: not-allowed;
+}
+
+.button:hover:not(:disabled) {
+  transform: scale(1.1);
+  opacity: 0.9;
+}

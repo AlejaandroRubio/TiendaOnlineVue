@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-3 gap-6 w-full p-4">
+  <div class="grid">
     <ProductItem 
       v-for="(product, index) in products" 
       :key="index" 
@@ -14,15 +14,17 @@
 import { reactive, watch } from 'vue';
 import ProductItem from './ProductItem.vue';
 import type { Product } from '../types/Product';
+import "../assets/styles/ProductList.css";
 
 const products = reactive<Product[]>([
   { nombre: 'Laptop', precio: 1000, stock: 5, disponible: true, imagen: '/images/laptop.jpg' },
   { nombre: 'Mouse', precio: 50, stock: 0, disponible: false, imagen: '/images/mouse.jpg' },
   { nombre: 'Teclado', precio: 80, stock: 3, disponible: true, imagen: '/images/teclado.jpg' },
-  { nombre: 'Teclado1', precio: 80, stock: 3, disponible: true, imagen: '/images/teclado.jpg' },
-  { nombre: 'Teclado2', precio: 80, stock: 3, disponible: true, imagen: '/images/teclado.jpg' },
-  { nombre: 'Teclado3', precio: 80, stock: 3, disponible: true, imagen: '/images/teclado.jpg' },
-  { nombre: 'Teclado4', precio: 80, stock: 3, disponible: true, imagen: '/images/teclado.jpg' }
+  { nombre: 'Monitor', precio: 200, stock: 4, disponible: true, imagen: '/images/monitor.jpg' },
+  { nombre: 'Silla Gamer', precio: 300, stock: 2, disponible: true, imagen: '/images/silla.jpg' },
+  { nombre: 'Auriculares', precio: 120, stock: 6, disponible: true, imagen: '/images/auriculares.jpg' },
+  { nombre: 'Webcam', precio: 90, stock: 8, disponible: true, imagen: '/images/webcam.jpg' },
+  { nombre: 'Micrófono', precio: 150, stock: 5, disponible: true, imagen: '/images/microfono.jpg' }
 ]);
 
 watch(products, (newProducts) => {
