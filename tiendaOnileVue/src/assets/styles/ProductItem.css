@@ -16,6 +16,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   border: 1px solid rgba(255, 255, 255, 0.1);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  border: 1px black solid;
 }
 
 .card:hover {
@@ -32,6 +33,9 @@
 .text-container {
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
 .text-container h3 {
@@ -40,20 +44,32 @@
   font-weight: 600;
 }
 
-.text-container p {
+.details {
+  display: flex;
+  gap: 16px;
+  margin-bottom: auto; /* Empuja la disponibilidad hacia abajo */
+}
+
+.details p {
   font-size: 16px;
-  margin: 4px 0;
+  margin: 0;
   font-weight: 400;
+}
+
+.available,
+.not-available {
+  align-self: flex-end; /* Alinea la disponibilidad a la derecha */
+  font-size: 14px;
+  font-weight: 500;
+  margin-top: auto; /* Lo coloca en la parte inferior */
 }
 
 .available {
   color: #4CAF50;
-  font-weight: 500;
 }
 
 .not-available {
   color: #F44336;
-  font-weight: 500;
 }
 
 .button-group {

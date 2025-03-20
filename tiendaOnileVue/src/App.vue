@@ -1,6 +1,6 @@
 <template>
-  <div class="min-h-screen bg-white flex flex-col items-center p-6 w-full">
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Inventario de Productos</h1>
+  <div class="min-h-screen flex flex-col items-center p-6 w-full">
+    <h1 style="color: white;">Inventario de Productos</h1>
     <ProductList />
   </div>
 </template>

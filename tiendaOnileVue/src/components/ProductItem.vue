@@ -1,19 +1,23 @@
 <template>
   <div class="card" :style="{ backgroundImage: `url(${product.imagen})` }">
+    <div class="overlay"></div>
     <div class="text-container">
       <h3>{{ product.nombre }}</h3>
-      <p>💰 ${{ product.precio }}</p>
-      <p>📦 Stock: {{ product.stock }}</p>
-      <p :class="product.disponible ? 'available' : 'not-available'">
-        {{ product.disponible ? '✅ Disponible' : '❌ No Disponible' }}
-      </p>
+      <div class="details">
+        <p>💰 ${{ product.precio }}</p>
+        <p>📦 Stock: {{ product.stock }}</p>
+      </div>
     </div>
-
+    
+    
     <div class="button-group">
       <button @click="modifyStock(1)" class="button increase">➕</button>
       <button @click="modifyStock(-1)" :disabled="product.stock <= 0" class="button decrease">
         ➖
       </button>
+      <p :class="product.disponible ? 'available' : 'not-available'">
+        {{ product.disponible ? '✅ Disponible' : '❌ No Disponible' }}
+      </p>
     </div>
   </div>
 </template>
